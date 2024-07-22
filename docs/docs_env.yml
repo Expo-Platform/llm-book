@@ -1,0 +1,12 @@
+name: rtd38
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip=24.0
+  - sphinx=7.3.7
+  - pip:
+    - myst-nb==1.1.1
+    - myst-parser==3.0.1
+    - sphinx_rtd_theme=2.0.0

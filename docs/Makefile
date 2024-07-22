@@ -1,8 +1,6 @@
 # Minimal makefile for Sphinx documentation
 #
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
@@ -18,3 +16,8 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+local-build:
+	rm -Rf source/notebooks
+	cp -R ../notebooks source
+	sphinx-build -nW --keep-going -b html $(SOURCEDIR) $(BUILDDIR)/html
